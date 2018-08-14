@@ -1,0 +1,22 @@
+.app-header {
+    .app-profile-button {
+        display: inline-flex;
+        flex-direction: row;
+        justify-content: center;
+
+        app-image {
+            height: 48px;
+            width: 48px;
+        }
+
+        mdc-icon {
+            height: 24px;
+            // margin: auto 8px;
+            margin: 0 8px;
+        }
+    }
+}
+
+.app-body {
+    margin-top: 84px;
+}

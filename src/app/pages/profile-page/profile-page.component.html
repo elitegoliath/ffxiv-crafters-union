@@ -1,0 +1,24 @@
+<div #root class="profile-page">
+    <div class="profile-page__header">
+        <app-button [isFab]="true" (clicked)="closeModal()"><mdc-icon>close</mdc-icon></app-button>
+    </div>
+    <div class="profile_page__body">
+        <div class="profile-preview">
+            <div>User Character Portrait</div>
+            <div>{{ userState.authUserCharacterName | async }}</div>
+            <div>User Metadata</div>
+            <div>Character Data including lodestone ID</div>
+        </div>
+        <div>Displayname Preference</div>
+        <form class="character-search" [formGroup]="characterSearchForm">
+            <mdc-text-field formControlName="lodestone_id" label="Lodestone ID"></mdc-text-field>
+            <span>OR</span>
+            <div>Character Name: Search on button press</div>
+            <div>Server: combo typeahead or filter + dropdown menu</div>
+            <div>Character Result List: make selection on click, remove list</div>
+            <div>
+                <app-button (clicked)="search()">Search</app-button>
+            </div>
+        </form>
+    </div>
+</div>

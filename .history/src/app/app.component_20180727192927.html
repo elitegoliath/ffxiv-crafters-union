@@ -1,0 +1,22 @@
+<mdc-app-bar [short]="true" [fixedAdjustElement]="mainContent" class="app-header">
+    <mdc-app-bar-row>
+        <mdc-app-bar-section align="end">
+            <app-dropdown-menu>
+                <app-ripple menuButton>
+                    <div class="app-profile-button">
+                        <app-image [isRound]="true" src="../assets/images/anon-prof-pic.jpg"></app-image>
+                        <mdc-icon>arrow_drop_down</mdc-icon>
+                    </div>
+                </app-ripple>
+                <mdc-menu-item menuItem (click)="profileModal.show()">Google Login</mdc-menu-item>
+                <mdc-menu-item menuItem>Facebook Login</mdc-menu-item>
+            </app-dropdown-menu>
+        </mdc-app-bar-section>
+    </mdc-app-bar-row>
+</mdc-app-bar>
+
+<div #mainContent class="app-body">
+    
+</div>
+
+<app-modal #profileModal></app-modal>

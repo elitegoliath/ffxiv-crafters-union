@@ -1,0 +1,35 @@
+<mdc-app-bar [short]="true" [fixedAdjustElement]="mainContent" class="app-header">
+    <mdc-app-bar-row>
+        <mdc-app-bar-section align="end">
+            <div class="app-profile-username">{{ userState.authUserDisplayName | async }}</div>
+            <app-dropdown-menu>
+                <app-ripple menuButton>
+                    <div class="app-profile-button">
+                        <app-image [isRound]="true" [src]="(userState.authUser | async)?.photoURL"></app-image>
+                        <mdc-icon>arrow_drop_down</mdc-icon>
+                    </div>
+                </app-ripple>
+                <div menuItems>
+                    <div *ngIf="userState.logginStatus | async; then loggedIn; else loggedOut"></div>
+
+                    <ng-template #loggedOut>
+                        <mdc-menu-item (click)="authService.googleLogin()">Google Login</mdc-menu-item>
+                        <mdc-menu-item>Facebook Login</mdc-menu-item>
+                    </ng-template>
+
+                    <ng-template #loggedIn>
+                        <mdc-menu-item (click)="profileModal.show()">Profile</mdc-menu-item>
+                        <mdc-menu-divider></mdc-menu-divider>
+                        <mdc-menu-item (click)="authService.signOut()">Logout</mdc-menu-item>
+                    </ng-template>
+                </div>
+            </app-dropdown-menu>
+        </mdc-app-bar-section>
+    </mdc-app-bar-row>
+</mdc-app-bar>
+
+<div #mainContent class="app-body"></div>
+
+<app-modal #profileModal [isEscapable]="false">
+    <app-profile-page></app-profile-page>
+</app-modal>

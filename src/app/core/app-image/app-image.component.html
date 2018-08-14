@@ -1,0 +1,5 @@
+<div class="image--container">
+  <img [hidden]="isLoading" (load)="onLoaded()" [src]="src" class="image--loading-spinner"
+       [ngClass]="{ 'image--round': isRound }"/>
+  <img *ngIf="isLoading" src="../../../assets/images/loading-spinner.gif" [ngClass]="{ 'image--round': isRound }"/>
+</div>

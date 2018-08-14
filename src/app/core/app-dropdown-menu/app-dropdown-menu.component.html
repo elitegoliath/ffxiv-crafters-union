@@ -1,0 +1,8 @@
+<mdc-menu-anchor #menuAnchor>
+    <div (click)="menu.open()">
+        <ng-content select="[menuButton]"></ng-content>
+    </div>
+    <mdc-menu #menu [anchor]="menuAnchor" anchorCorner="bottom-start" >
+        <ng-content select="[menuItems]"></ng-content>
+    </mdc-menu>
+</mdc-menu-anchor>

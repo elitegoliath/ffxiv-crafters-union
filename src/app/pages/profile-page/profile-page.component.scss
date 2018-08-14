@@ -1,0 +1,19 @@
+.profile-page {
+    &__header {
+        display: flex;
+        flex-direction: row-reverse;
+    }
+
+    &__body {
+        display: flex;
+        flex-direction: column;
+
+        .profile-preview {
+
+        }
+
+        .character-search {
+            
+        }
+    }
+}

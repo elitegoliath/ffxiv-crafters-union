@@ -1,0 +1,11 @@
+<div #root class="app-button">
+    <!-- <div *ngIf="isFab; then normalButton else fab"></div> -->
+
+    <button *ngIf="!isFab" mdc-button>
+        <ng-content></ng-content>
+    </button>
+
+    <button mdc-fab>
+        <ng-content></ng-content>
+    </button>
+</div>

@@ -1,0 +1,6 @@
+<mdc-menu-anchor #menuAnchor>
+    <ng-content select="[menuButton]"></ng-content>
+    <mdc-menu #menu [anchor]="menuAnchor">
+        <ng-content select="[menuItem]"></ng-content>
+    </mdc-menu>
+</mdc-menu-anchor>

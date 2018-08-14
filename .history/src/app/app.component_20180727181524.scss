@@ -1,0 +1,14 @@
+.app-header {
+    .app-profile-button {
+        display: flex;
+
+        app-image {
+            height: 48px;
+            width: 48px;
+        }
+    }
+}
+
+.app-body {
+    margin-top: 84px;
+}
