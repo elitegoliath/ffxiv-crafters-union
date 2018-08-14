@@ -8,6 +8,8 @@ import { AppMaterialModule } from '../material.module';
 import { AppRippleComponent } from './app-ripple/app-ripple.component';
 import { AppModalComponent } from './app-modal/app-modal.component';
 import { AppDropdownMenuComponent } from './app-dropdown-menu/app-dropdown-menu.component';
+import { AppRadioFormComponent } from './app-radio-form/app-radio-form.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
     imports: [
@@ -15,6 +17,8 @@ import { AppDropdownMenuComponent } from './app-dropdown-menu/app-dropdown-menu.
         AppMaterialModule,
         AngularFireAuthModule,
         AngularFirestoreModule,
+        FormsModule,
+        ReactiveFormsModule,
     ],
     declarations: [
         AppImageComponent,
@@ -22,6 +26,7 @@ import { AppDropdownMenuComponent } from './app-dropdown-menu/app-dropdown-menu.
         AppRippleComponent,
         AppModalComponent,
         AppDropdownMenuComponent,
+        AppRadioFormComponent,
     ],
     exports: [
         AppImageComponent,
@@ -29,6 +34,7 @@ import { AppDropdownMenuComponent } from './app-dropdown-menu/app-dropdown-menu.
         AppRippleComponent,
         AppModalComponent,
         AppDropdownMenuComponent,
+        AppRadioFormComponent,
     ],
 })
 export class CoreModule {

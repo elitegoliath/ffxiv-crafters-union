@@ -2,6 +2,7 @@ import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { ModalService } from '../../services';
 import { UserState } from '../../services/middleware';
 import { FormControl, FormGroup } from '@angular/forms';
+import { RadioOption } from '../../core/app-radio-form/app-radio-form.component';
 
 @Component({
     selector: 'app-profile-page',
@@ -10,6 +11,21 @@ import { FormControl, FormGroup } from '@angular/forms';
     changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ProfilePageComponent {
+
+    private readonly userNameRadio: RadioOption = {
+        value: 'user_name',
+        label: 'User name',
+    };
+
+    private readonly characterNameRadio: RadioOption = {
+        value: 'character_name',
+        label: 'Character Name',
+    };
+
+    public radioOptions: RadioOption[] = [
+        this.userNameRadio,
+        this.characterNameRadio,
+    ];
 
     public characterSearchForm: FormGroup = new FormGroup({
         lodestone_id: new FormControl({value: '', disabled: false}),

@@ -37,6 +37,7 @@ export class AppImageComponent {
      */
     @Input()
     public set src(imgURL: string) {
+        console.log('SOURCE: ', imgURL);
         this.isLoading = true;
         this._src = imgURL;
     }

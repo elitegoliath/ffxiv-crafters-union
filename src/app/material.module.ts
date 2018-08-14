@@ -1,13 +1,18 @@
-import { NgModule } from '@angular/core';
 import {
     MdcAppBarModule,
     MdcButtonModule,
     MdcCardModule,
-    MdcIconModule, MdcFabModule,
-    MdcRippleModule, MdcDialogModule,
+    MdcDialogModule,
+    MdcFabModule,
+    MdcIconModule,
     MdcMenuModule,
-    MdcTextFieldModule
+    MdcRippleModule,
+    MdcTextFieldModule,
+    MdcElevationModule,
+    MdcRadioModule,
+    MdcFormFieldModule
 } from '@angular-mdc/web';
+import { NgModule } from '@angular/core';
 
 @NgModule({
     exports: [
@@ -20,6 +25,9 @@ import {
         MdcDialogModule,
         MdcMenuModule,
         MdcTextFieldModule,
+        MdcElevationModule,
+        MdcRadioModule,
+        MdcFormFieldModule,
     ],
 })
 export class AppMaterialModule { }

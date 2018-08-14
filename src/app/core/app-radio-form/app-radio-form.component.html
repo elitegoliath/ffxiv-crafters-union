@@ -1,0 +1,6 @@
+<form #radioForm="ngForm">
+    <mdc-form-field *ngFor="let option of options">
+        <mdc-radio ngModel name="displayNameRadioGroup" [value]="option.value"></mdc-radio>
+        <label>{{ option.label }}</label>
+    </mdc-form-field>
+</form>

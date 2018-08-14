@@ -28,7 +28,9 @@
     </mdc-app-bar-row>
 </mdc-app-bar>
 
-<div #mainContent class="app-body"></div>
+<div #mainContent class="app-body">
+    <app-welcome-page></app-welcome-page>
+</div>
 
 <app-modal #profileModal [isEscapable]="false">
     <app-profile-page></app-profile-page>

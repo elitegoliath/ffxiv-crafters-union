@@ -9,7 +9,9 @@
         flex-direction: column;
 
         .profile-preview {
-
+            &__character-portrait {
+                height: 150px;
+            }
         }
 
         .character-search {

@@ -11,11 +11,13 @@ import { environment } from '../environments/environment';
 import { AppComponent } from './app.component';
 import { ProfilePageComponent } from './pages/profile-page/profile-page.component';
 import { AuthUserReducer, LogginStatusReducer } from './store/reducers';
+import { WelcomePageComponent } from './pages/welcome-page/welcome-page.component';
 
 @NgModule({
     declarations: [
         AppComponent,
         ProfilePageComponent,
+        WelcomePageComponent,
     ],
     imports: [
         BrowserModule,

@@ -2,14 +2,19 @@
     <div class="profile-page__header">
         <app-button [isFab]="true" (clicked)="closeModal()"><mdc-icon>close</mdc-icon></app-button>
     </div>
-    <div class="profile_page__body">
+    <div class="profile-page__body" *ngIf="(userState.authUser | async ) as user">
         <div class="profile-preview">
-            <div>User Character Portrait</div>
-            <div>{{ userState.authUserCharacterName | async }}</div>
-            <div>User Metadata</div>
-            <div>Character Data including lodestone ID</div>
+            <div class="profile-preview__character-portrait">
+                <app-image [src]="user?.character?.portrait"></app-image>
+            </div>
+            <div>{{ user?.character?.name }}</div>
+            <div>TODO: User Metadata</div>
+            <div>TODO: Character Data including lodestone ID</div>
         </div>
-        <div>Displayname Preference</div>
+        <div>
+            Displayname:
+            <app-radio-form [options]="radioOptions"></app-radio-form>
+        </div>
         <form class="character-search" [formGroup]="characterSearchForm">
             <mdc-text-field formControlName="lodestone_id" label="Lodestone ID"></mdc-text-field>
             <span>OR</span>
