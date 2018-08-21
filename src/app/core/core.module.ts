@@ -10,6 +10,7 @@ import { AppModalComponent } from './app-modal/app-modal.component';
 import { AppDropdownMenuComponent } from './app-dropdown-menu/app-dropdown-menu.component';
 import { AppRadioFormComponent } from './app-radio-form/app-radio-form.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AppFabComponent } from './app-fab/app-fab.component';
 
 @NgModule({
     imports: [
@@ -27,6 +28,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
         AppModalComponent,
         AppDropdownMenuComponent,
         AppRadioFormComponent,
+        AppFabComponent,
     ],
     exports: [
         AppImageComponent,
@@ -35,6 +37,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
         AppModalComponent,
         AppDropdownMenuComponent,
         AppRadioFormComponent,
+        AppFabComponent,
     ],
 })
 export class CoreModule {

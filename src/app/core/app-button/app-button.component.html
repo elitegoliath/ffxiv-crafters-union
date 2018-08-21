@@ -1,9 +1,5 @@
 <div #root class="app-button" (click)="onClick()">
-    <button *ngIf="!isFab" [disabled]="isDisabled" mdc-button>
-        <ng-content></ng-content>
-    </button>
-
-    <button *ngIf="isFab" [disabled]="isDisabled" mdc-fab>
+    <button [disabled]="isDisabled" mdc-button [primary]="false">
         <ng-content></ng-content>
     </button>
 </div>

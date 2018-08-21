@@ -1,17 +1,17 @@
-import { Component, Input, ChangeDetectionStrategy, Output, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
-    selector: 'app-button',
-    templateUrl: './app-button.component.html',
-    styleUrls: ['./app-button.component.scss'],
+    selector: 'app-fab',
+    templateUrl: './app-fab.component.html',
+    styleUrls: ['./app-fab.component.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class AppButtonComponent {
+export class AppFabComponent {
 
     /**
      * Flag that marks the button as disabled, and prevents event emission.
      *
-     * @memberof AppButtonComponent
+     * @memberof AppFabComponent
      */
     @Input()
     public isDisabled = false;
@@ -20,7 +20,7 @@ export class AppButtonComponent {
      * Emitter for the click event.
      *
      * @type {EventEmitter}
-     * @memberof AppButtonComponent
+     * @memberof AppFabComponent
      */
     @Output()
     public clicked: EventEmitter<boolean> = new EventEmitter();
@@ -29,7 +29,7 @@ export class AppButtonComponent {
      * Emits the click event only if the button is not disabled.
      *
      * @returns
-     * @memberof AppButtonComponent
+     * @memberof AppFabComponent
      */
     public onClick() {
         if (this.isDisabled) {
@@ -38,4 +38,5 @@ export class AppButtonComponent {
 
         this.clicked.emit(true);
     }
+
 }

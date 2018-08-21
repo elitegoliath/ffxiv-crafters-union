@@ -1,7 +1,7 @@
 import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { ModalService } from '../../services';
 import { UserState } from '../../services/middleware';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormGroup } from '@angular/forms';
 import { RadioOption } from '../../core/app-radio-form/app-radio-form.component';
 
 @Component({
@@ -27,8 +27,10 @@ export class ProfilePageComponent {
         this.characterNameRadio,
     ];
 
+    public lodestoneId = '';
+
     public characterSearchForm: FormGroup = new FormGroup({
-        lodestone_id: new FormControl({value: '', disabled: false}),
+        
     });
 
     constructor(
