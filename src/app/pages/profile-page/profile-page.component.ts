@@ -1,8 +1,8 @@
 import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { ModalService } from '../../services';
 import { UserState } from '../../services/middleware';
-import { FormGroup } from '@angular/forms';
 import { RadioOption } from '../../core/app-radio-form/app-radio-form.component';
+import { List } from 'immutable';
 
 @Component({
     selector: 'app-profile-page',
@@ -29,9 +29,46 @@ export class ProfilePageComponent {
 
     public lodestoneId = '';
 
-    public characterSearchForm: FormGroup = new FormGroup({
-        
-    });
+    public characterName = '';
+
+    public serverName = 'Select Server';
+
+    public mockServerList: List<string> = List<string>([
+        'Server 1',
+        'Server 2',
+        'Server 3',
+        'Server 4',
+        'Server 5',
+        'Server 6',
+        'Server 7',
+        'Server 8',
+        'Server 9',
+        'Server 10',
+        'Server 1',
+        'Server 2',
+        'Server 3',
+        'Server 4',
+        'Server 5',
+        'Server 6',
+        'Server 7',
+        'Server 8',
+        'Server 9',
+        'Server 10',
+        'Server 1',
+        'Server 2',
+        'Server 3',
+        'Server 4',
+        'Server 5',
+        'Server 6',
+        'Server 7',
+        'Server 8',
+        'Server 9',
+        'Server 10',
+    ]);
+
+    public get isServerValid() {
+        return this.mockServerList.includes(this.serverName);
+    }
 
     constructor(
         private _modalService: ModalService,
@@ -43,6 +80,10 @@ export class ProfilePageComponent {
     }
 
     public search() {
-        console.log(this.characterSearchForm);
+
+    }
+
+    public setServerName(server: string) {
+        this.serverName = server;
     }
 }

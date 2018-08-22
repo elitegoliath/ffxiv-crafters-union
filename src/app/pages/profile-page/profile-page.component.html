@@ -1,6 +1,8 @@
 <div #root class="profile-page">
     <div class="profile-page__header">
-        <app-fab (clicked)="closeModal()"><mdc-icon>close</mdc-icon></app-fab>
+        <app-fab (clicked)="closeModal()">
+            <mdc-icon>close</mdc-icon>
+        </app-fab>
     </div>
     <div class="profile-page__body" *ngIf="(userState.authUser | async ) as user">
         <div class="profile-preview">
@@ -17,16 +19,23 @@
         </div>
         <div class="character-search">
             <mdc-text-field #lodestone_id [value]="lodestoneId" label="Lodestone ID"></mdc-text-field>
-            {{ lodestone_id.value }}
             <app-button *ngIf="lodestone_id.value">SEARCH LODESTONE</app-button>
             <p>OR</p>
-            <form [formGroup]="characterSearchForm">
-                <div>Character Name: Search on button press</div>
-                <div>Server: combo typeahead or filter + dropdown menu</div>
-            </form>
+            <div>
+                <mdc-text-field #character_name label="Name" [value]="characterName" [required]="true"></mdc-text-field>
+                <app-dropdown-menu>
+                    <app-button menuButton>{{ serverName }}
+                        <mdc-icon>arrow_drop_down</mdc-icon>
+                    </app-button>
+
+                    <div menuItems>
+                        <mdc-menu-item *ngFor="let server of mockServerList" (click)="setServerName(server)">{{ server }}</mdc-menu-item>
+                    </div>
+                </app-dropdown-menu>
+            </div>
             <div>Character Result List: make selection on click, remove list</div>
             <div>
-                <app-button (clicked)="search()">Search</app-button>
+                <app-button *ngIf="character_name.value && isServerValid" (clicked)="search()">Search</app-button>
             </div>
         </div>
     </div>
